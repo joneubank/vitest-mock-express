@@ -1,5 +1,5 @@
 {
-  "name": "@vitest-mock/express",
+  "name": "vitest-mock-express",
   "version": "2.0.1",
   "description": "A lightweight Vitest mock for unit testing Express",
   "main": "dist/index.js",

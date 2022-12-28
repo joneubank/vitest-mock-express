@@ -1,4 +1,4 @@
-# @vitest-mock/express
+# vitest-mock-express
 
 A lightweight Vitest mock for unit testing Express
 
