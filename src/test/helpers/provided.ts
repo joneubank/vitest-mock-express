@@ -1,7 +1,6 @@
 // Types
 import type { Response } from 'express'
 import type { MediaType, Request } from 'express-serve-static-core'
-import { vi } from 'vitest'
 
 export const providedNumber = 123
 

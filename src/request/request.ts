@@ -1,6 +1,5 @@
 // Types
 import type { Request } from 'express'
-import { vi } from 'vitest'
 
 // Local Types
 import type { MockRequest } from './index'

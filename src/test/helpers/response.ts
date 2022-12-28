@@ -1,7 +1,6 @@
 // Types
 import type { Socket } from 'net'
 import type { Response } from 'express'
-import { vi } from 'vitest'
 
 export function callAllFunctions(res: Response) {
   /* express.Response */
