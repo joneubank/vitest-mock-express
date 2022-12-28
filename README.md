@@ -4,25 +4,18 @@ A lightweight Vitest mock for unit testing Express
 
 THIS IS A FORK OF [@jest-mock/express](https://github.com/bikk-uk/jest-mock-express) ALL CREDITS GOES TO THE ORIGINAL AUTHOR
 
-[![Build and Test](https://github.com/bikk-uk/jest-mock-express/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/bikk-uk/jest-mock-express/actions/workflows/build-test.yml)
-[![Coverage Status](https://coveralls.io/repos/github/bikk-uk/jest-mock-express/badge.svg?branch=master)](https://coveralls.io/github/bikk-uk/jest-mock-express?branch=master)
-[![Known Vulnerabilities](https://snyk.io/test/github/bikk-uk/jest-mock-express/badge.svg?targetFile=package.json)](https://snyk.io/test/github/bikk-uk/jest-mock-express?targetFile=package.json)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/bikk-uk/jest-mock-express?label=github)
-![npm](https://img.shields.io/npm/v/@jest-mock/express)
-![NPM](https://img.shields.io/npm/l/@jest-mock/express)
-
 ## Getting Started
 
 Installation:
 
-`yarn add --dev @jest-mock/express`
+`yarn add --dev vitest-mock-express`
 
-`npm install --save-dev @jest-mock/express`
+`npm install --save-dev vitest-mock-express`
 
 Importing:
 
 ```typescript
-import { getMockReq, getMockRes } from '@jest-mock/express'
+import { getMockReq, getMockRes } from 'vitest-mock-express'
 ```
 
 ## Usage
@@ -65,7 +58,7 @@ expect(req.user).toBe(mockUser)
 
 ### Response - `getMockRes`
 
-`getMockRes` will return a mocked `res` object with Jest mock functions. Chaining has been implemented for the applicable functions.
+`getMockRes` will return a mocked `res` object with Vitest mock functions. Chaining has been implemented for the applicable functions.
 
 ```typescript
 const { res, next, clearMockRes } = getMockRes()

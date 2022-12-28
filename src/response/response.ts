@@ -9,7 +9,7 @@ import type { MockResponse } from './index'
  * Returns a mocked version of key **Express** components, including:
  * - a mocked **Express** `Response`, with mocked functions (chainable) and default values.
  * - a mocked `next()` convenience function.
- * - `mockClear()` to clear all internal **Jest** functions including `next()`
+ * - `mockClear()` to clear all internal **Vitest** functions including `next()`
  * - `clearMockRes()` an alias for `mockClear()`
  */
 export const getMockRes = <T extends Response>(
