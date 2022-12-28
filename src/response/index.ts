@@ -5,6 +5,7 @@ import type { Response } from 'express'
 
 // Local Types
 import type { EventEventEmitter } from '../index'
+import { Mock } from 'vitest'
 
 interface StreamWritable extends EventEventEmitter {
   writable?: Writable['writable']
@@ -15,23 +16,23 @@ interface StreamWritable extends EventEventEmitter {
   writableObjectMode?: Writable['writableObjectMode']
   writableCorked?: Writable['writableCorked']
   destroyed?: Writable['destroyed']
-  _write?: jest.Mock
-  _writev?: jest.Mock
-  _destroy?: jest.Mock
-  _final?: jest.Mock
-  write?: jest.Mock
-  setDefaultEncoding?: jest.Mock
-  end?: jest.Mock
-  cork?: jest.Mock
-  uncork?: jest.Mock
-  destroy?: jest.Mock
-  addListener?: jest.Mock
-  emit?: jest.Mock
-  on?: jest.Mock
-  once?: jest.Mock
-  prependListener?: jest.Mock
-  prependOnceListener?: jest.Mock
-  removeListener?: jest.Mock
+  _write?: Mock
+  _writev?: Mock
+  _destroy?: Mock
+  _final?: Mock
+  write?: Mock
+  setDefaultEncoding?: Mock
+  end?: Mock
+  cork?: Mock
+  uncork?: Mock
+  destroy?: Mock
+  addListener?: Mock
+  emit?: Mock
+  on?: Mock
+  once?: Mock
+  prependListener?: Mock
+  prependOnceListener?: Mock
+  removeListener?: Mock
 }
 
 interface HttpOutgoingMessage extends StreamWritable {
@@ -44,55 +45,55 @@ interface HttpOutgoingMessage extends StreamWritable {
   headersSent?: OutgoingMessage['headersSent']
   connection?: Partial<OutgoingMessage['connection']>
   socket?: Partial<OutgoingMessage['socket']>
-  setTimeout?: jest.Mock
-  setHeader?: jest.Mock
-  getHeader?: jest.Mock
-  getHeaders?: jest.Mock
-  getHeaderNames?: jest.Mock
-  hasHeader?: jest.Mock
-  removeHeader?: jest.Mock
-  addTrailers?: jest.Mock
-  flushHeaders?: jest.Mock
+  setTimeout?: Mock
+  setHeader?: Mock
+  getHeader?: Mock
+  getHeaders?: Mock
+  getHeaderNames?: Mock
+  hasHeader?: Mock
+  removeHeader?: Mock
+  addTrailers?: Mock
+  flushHeaders?: Mock
 }
 
 interface HttpServerResponse extends HttpOutgoingMessage {
   statusCode?: ServerResponse['statusCode']
   statusMessage?: ServerResponse['statusMessage']
-  assignSocket?: jest.Mock
-  detachSocket?: jest.Mock
-  writeContinue?: jest.Mock
-  writeHead?: jest.Mock
-  writeProcessing?: jest.Mock
+  assignSocket?: Mock
+  detachSocket?: Mock
+  writeContinue?: Mock
+  writeHead?: Mock
+  writeProcessing?: Mock
 }
 
 export interface MockResponse extends HttpServerResponse {
-  status?: jest.Mock
-  sendStatus?: jest.Mock
-  links?: jest.Mock
-  send?: jest.Mock
-  json?: jest.Mock
-  jsonp?: jest.Mock
-  sendFile?: jest.Mock
-  sendfile?: jest.Mock
-  download?: jest.Mock
-  contentType?: jest.Mock
-  type?: jest.Mock
-  format?: jest.Mock
-  attachment?: jest.Mock
-  set?: jest.Mock
-  header?: jest.Mock
+  status?: Mock
+  sendStatus?: Mock
+  links?: Mock
+  send?: Mock
+  json?: Mock
+  jsonp?: Mock
+  sendFile?: Mock
+  sendfile?: Mock
+  download?: Mock
+  contentType?: Mock
+  type?: Mock
+  format?: Mock
+  attachment?: Mock
+  set?: Mock
+  header?: Mock
   headersSent?: Response['headersSent']
-  get?: jest.Mock
-  clearCookie?: jest.Mock
-  cookie?: jest.Mock
-  location?: jest.Mock
-  redirect?: jest.Mock
-  render?: jest.Mock
+  get?: Mock
+  clearCookie?: Mock
+  cookie?: Mock
+  location?: Mock
+  redirect?: Mock
+  render?: Mock
   locals?: Partial<Response['locals']>
   charset?: Response['charset']
-  vary?: jest.Mock
+  vary?: Mock
   app?: Partial<Response['app']>
-  append?: jest.Mock
+  append?: Mock
   req?: Partial<Response['req']>
 
   // allow custom properties to be provided

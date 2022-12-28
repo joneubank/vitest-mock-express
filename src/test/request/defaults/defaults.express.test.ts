@@ -1,4 +1,5 @@
 // Tested Module
+import { describe, test, expect, Mock } from 'vitest'
 import getMockReq from '../../../request/request'
 
 describe('request - Defaults from "express.Response" (accepts no arguments and return default values)', () => {
@@ -170,7 +171,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.get).toBeDefined()
     expect(typeof req.get).toBe('function')
-    expect((req.get as jest.Mock).getMockName()).toBe('get mock default')
+    expect((req.get as Mock).getMockName()).toBe('get mock default')
   })
 
   test('req.header is a mocked function', () => {
@@ -178,7 +179,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.header).toBeDefined()
     expect(typeof req.header).toBe('function')
-    expect((req.header as jest.Mock).getMockName()).toBe('header mock default')
+    expect((req.header as Mock).getMockName()).toBe('header mock default')
   })
 
   test('req.accepts is a mocked function', () => {
@@ -186,7 +187,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.accepts).toBeDefined()
     expect(typeof req.accepts).toBe('function')
-    expect((req.accepts as jest.Mock).getMockName()).toBe('accepts mock default')
+    expect((req.accepts as Mock).getMockName()).toBe('accepts mock default')
   })
 
   test('req.acceptsCharsets is a mocked function', () => {
@@ -194,7 +195,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.acceptsCharsets).toBeDefined()
     expect(typeof req.acceptsCharsets).toBe('function')
-    expect((req.acceptsCharsets as jest.Mock).getMockName()).toBe('acceptsCharsets mock default')
+    expect((req.acceptsCharsets as Mock).getMockName()).toBe('acceptsCharsets mock default')
   })
 
   test('req.acceptsEncodings is a mocked function', () => {
@@ -202,7 +203,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.acceptsEncodings).toBeDefined()
     expect(typeof req.acceptsEncodings).toBe('function')
-    expect((req.acceptsEncodings as jest.Mock).getMockName()).toBe('acceptsEncodings mock default')
+    expect((req.acceptsEncodings as Mock).getMockName()).toBe('acceptsEncodings mock default')
   })
 
   test('req.acceptsLanguages is a mocked function', () => {
@@ -210,7 +211,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.acceptsLanguages).toBeDefined()
     expect(typeof req.acceptsLanguages).toBe('function')
-    expect((req.acceptsLanguages as jest.Mock).getMockName()).toBe('acceptsLanguages mock default')
+    expect((req.acceptsLanguages as Mock).getMockName()).toBe('acceptsLanguages mock default')
   })
 
   test('req.range is a mocked function', () => {
@@ -218,7 +219,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.range).toBeDefined()
     expect(typeof req.range).toBe('function')
-    expect((req.range as jest.Mock).getMockName()).toBe('range mock default')
+    expect((req.range as Mock).getMockName()).toBe('range mock default')
   })
 
   test('req.param is a mocked function', () => {
@@ -226,7 +227,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.param).toBeDefined()
     expect(typeof req.param).toBe('function')
-    expect((req.param as jest.Mock).getMockName()).toBe('param mock default')
+    expect((req.param as Mock).getMockName()).toBe('param mock default')
   })
 
   test('req.is is a mocked function', () => {
@@ -234,7 +235,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.is).toBeDefined()
     expect(typeof req.is).toBe('function')
-    expect((req.is as jest.Mock).getMockName()).toBe('is mock default')
+    expect((req.is as Mock).getMockName()).toBe('is mock default')
   })
 
   test('req.app is an empty object', () => {
@@ -250,7 +251,7 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.res).toBeDefined()
     expect(typeof req.res).toBe('function')
-    expect((req.res as unknown as jest.Mock).getMockName()).toBe('res mock default')
+    expect((req.res as unknown as Mock).getMockName()).toBe('res mock default')
   })
 
   test('req.next is a mocked function', () => {
@@ -258,6 +259,6 @@ describe('request - Defaults from "express.Response" (accepts no arguments and r
 
     expect(req.next).toBeDefined()
     expect(typeof req.next).toBe('function')
-    expect((req.next as jest.Mock).getMockName()).toBe('next mock default')
+    expect((req.next as Mock).getMockName()).toBe('next mock default')
   })
 })

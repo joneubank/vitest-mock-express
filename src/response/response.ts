@@ -1,5 +1,6 @@
 // Types
 import type { Response, NextFunction } from 'express'
+import { vi } from 'vitest'
 
 // Local Types
 import type { MockResponse } from './index'
@@ -19,46 +20,46 @@ export const getMockRes = <T extends Response>(
   mockClear: () => void
   clearMockRes: () => void
 } => {
-  const next = jest.fn()
+  const next = vi.fn()
   const {
     /* express.Response */
-    status = jest.fn().mockName('status mock default'),
-    sendStatus = jest.fn().mockName('sendStatus mock default'),
-    links = jest.fn().mockName('links mock default'),
-    send = jest.fn().mockName('send mock default'),
-    json = jest.fn().mockName('json mock default'),
-    jsonp = jest.fn().mockName('jsonp mock default'),
-    sendFile = jest.fn().mockName('sendFile mock default'),
-    sendfile = jest.fn().mockName('sendfile mock default'),
-    download = jest.fn().mockName('download mock default'),
-    contentType = jest.fn().mockName('contentType mock default'),
-    type = jest.fn().mockName('type mock default'),
-    format = jest.fn().mockName('format mock default'),
-    attachment = jest.fn().mockName('attachment mock default'),
-    set = jest.fn().mockName('set mock default'),
-    header = jest.fn().mockName('header mock default'),
+    status = vi.fn().mockName('status mock default'),
+    sendStatus = vi.fn().mockName('sendStatus mock default'),
+    links = vi.fn().mockName('links mock default'),
+    send = vi.fn().mockName('send mock default'),
+    json = vi.fn().mockName('json mock default'),
+    jsonp = vi.fn().mockName('jsonp mock default'),
+    sendFile = vi.fn().mockName('sendFile mock default'),
+    sendfile = vi.fn().mockName('sendfile mock default'),
+    download = vi.fn().mockName('download mock default'),
+    contentType = vi.fn().mockName('contentType mock default'),
+    type = vi.fn().mockName('type mock default'),
+    format = vi.fn().mockName('format mock default'),
+    attachment = vi.fn().mockName('attachment mock default'),
+    set = vi.fn().mockName('set mock default'),
+    header = vi.fn().mockName('header mock default'),
     headersSent = false,
-    get = jest.fn().mockName('get mock default'),
-    clearCookie = jest.fn().mockName('clearCookie mock default'),
-    cookie = jest.fn().mockName('cookie mock default'),
-    location = jest.fn().mockName('location mock default'),
-    redirect = jest.fn().mockName('redirect mock default'),
-    render = jest.fn().mockName('render mock default'),
+    get = vi.fn().mockName('get mock default'),
+    clearCookie = vi.fn().mockName('clearCookie mock default'),
+    cookie = vi.fn().mockName('cookie mock default'),
+    location = vi.fn().mockName('location mock default'),
+    redirect = vi.fn().mockName('redirect mock default'),
+    render = vi.fn().mockName('render mock default'),
     locals = {},
     charset = '',
-    vary = jest.fn().mockName('vary mock default'),
+    vary = vi.fn().mockName('vary mock default'),
     app = {},
-    append = jest.fn().mockName('append mock default'),
+    append = vi.fn().mockName('append mock default'),
     req = {},
 
     /* http.ServerResponse */
     statusCode = 0,
     statusMessage = '',
-    assignSocket = jest.fn().mockName('assignSocket mock default'),
-    detachSocket = jest.fn().mockName('detachSocket mock default'),
-    writeContinue = jest.fn().mockName('writeContinue mock default'),
-    writeHead = jest.fn().mockName('writeHead mock default'),
-    writeProcessing = jest.fn().mockName('writeProcessing mock default'),
+    assignSocket = vi.fn().mockName('assignSocket mock default'),
+    detachSocket = vi.fn().mockName('detachSocket mock default'),
+    writeContinue = vi.fn().mockName('writeContinue mock default'),
+    writeHead = vi.fn().mockName('writeHead mock default'),
+    writeProcessing = vi.fn().mockName('writeProcessing mock default'),
 
     /* http.OutgoingMessage */
     // req - is handled/overridden as part of express.Response
@@ -70,15 +71,15 @@ export const getMockRes = <T extends Response>(
     // headersSent - is handled/overridden as part of express.Response
     connection = {},
     socket = {},
-    setTimeout = jest.fn().mockName('setTimeout mock default'),
-    setHeader = jest.fn().mockName('setHeader mock default'),
-    getHeader = jest.fn().mockName('getHeader mock default'),
-    getHeaders = jest.fn().mockName('getHeaders mock default'),
-    getHeaderNames = jest.fn().mockName('getHeaderNames mock default'),
-    hasHeader = jest.fn().mockName('hasHeader mock default'),
-    removeHeader = jest.fn().mockName('removeHeader mock default'),
-    addTrailers = jest.fn().mockName('addTrailers mock default'),
-    flushHeaders = jest.fn().mockName('flushHeaders mock default'),
+    setTimeout = vi.fn().mockName('setTimeout mock default'),
+    setHeader = vi.fn().mockName('setHeader mock default'),
+    getHeader = vi.fn().mockName('getHeader mock default'),
+    getHeaders = vi.fn().mockName('getHeaders mock default'),
+    getHeaderNames = vi.fn().mockName('getHeaderNames mock default'),
+    hasHeader = vi.fn().mockName('hasHeader mock default'),
+    removeHeader = vi.fn().mockName('removeHeader mock default'),
+    addTrailers = vi.fn().mockName('addTrailers mock default'),
+    flushHeaders = vi.fn().mockName('flushHeaders mock default'),
 
     /* stream.Writable */
     writable = false,
@@ -89,40 +90,40 @@ export const getMockRes = <T extends Response>(
     writableObjectMode = false,
     writableCorked = 0,
     destroyed = false,
-    _write = jest.fn().mockName('_write mock default'),
-    _writev = jest.fn().mockName('_writev mock default'),
-    _destroy = jest.fn().mockName('_destroy mock default'),
-    _final = jest.fn().mockName('_final mock default'),
-    write = jest.fn().mockName('write mock default'),
-    setDefaultEncoding = jest.fn().mockName('setDefaultEncoding mock default'),
-    end = jest.fn().mockName('end mock default'),
-    cork = jest.fn().mockName('cork mock default'),
-    uncork = jest.fn().mockName('uncork mock default'),
-    destroy = jest.fn().mockName('destroy mock default'),
-    addListener = jest.fn().mockName('addListener mock default'),
-    emit = jest.fn().mockName('emit mock default'),
-    on = jest.fn().mockName('on mock default'),
-    once = jest.fn().mockName('once mock default'),
-    prependListener = jest.fn().mockName('prependListener mock default'),
-    prependOnceListener = jest.fn().mockName('prependOnceListener mock default'),
-    removeListener = jest.fn().mockName('removeListener mock default'),
+    _write = vi.fn().mockName('_write mock default'),
+    _writev = vi.fn().mockName('_writev mock default'),
+    _destroy = vi.fn().mockName('_destroy mock default'),
+    _final = vi.fn().mockName('_final mock default'),
+    write = vi.fn().mockName('write mock default'),
+    setDefaultEncoding = vi.fn().mockName('setDefaultEncoding mock default'),
+    end = vi.fn().mockName('end mock default'),
+    cork = vi.fn().mockName('cork mock default'),
+    uncork = vi.fn().mockName('uncork mock default'),
+    destroy = vi.fn().mockName('destroy mock default'),
+    addListener = vi.fn().mockName('addListener mock default'),
+    emit = vi.fn().mockName('emit mock default'),
+    on = vi.fn().mockName('on mock default'),
+    once = vi.fn().mockName('once mock default'),
+    prependListener = vi.fn().mockName('prependListener mock default'),
+    prependOnceListener = vi.fn().mockName('prependOnceListener mock default'),
+    removeListener = vi.fn().mockName('removeListener mock default'),
 
     /* event.EventEmitter */
     // addListener - is handled/overridden as part of stream.Writable
     // on - is handled/overridden as part of stream.Writable
     // once - is handled/overridden as part of stream.Writable
     // removeListener - is handled/overridden as part of stream.Writable
-    off = jest.fn().mockName('off mock default'),
-    removeAllListeners = jest.fn().mockName('removeAllListeners mock default'),
-    setMaxListeners = jest.fn().mockName('setMaxListeners mock default'),
-    getMaxListeners = jest.fn().mockName('getMaxListeners mock default'),
-    listeners = jest.fn().mockName('listeners mock default'),
-    rawListeners = jest.fn().mockName('rawListeners mock default'),
+    off = vi.fn().mockName('off mock default'),
+    removeAllListeners = vi.fn().mockName('removeAllListeners mock default'),
+    setMaxListeners = vi.fn().mockName('setMaxListeners mock default'),
+    getMaxListeners = vi.fn().mockName('getMaxListeners mock default'),
+    listeners = vi.fn().mockName('listeners mock default'),
+    rawListeners = vi.fn().mockName('rawListeners mock default'),
     // emit - is handled/overridden as part of stream.Writable
-    listenerCount = jest.fn().mockName('listenerCount mock default'),
+    listenerCount = vi.fn().mockName('listenerCount mock default'),
     // prependListener - is handled/overridden as part of stream.Writable
     // prependOnceListener - is handled/overridden as part of stream.Writable
-    eventNames = jest.fn().mockName('eventNames mock default'),
+    eventNames = vi.fn().mockName('eventNames mock default'),
 
     // custom values
     ...extraProvidedValues

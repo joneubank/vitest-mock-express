@@ -1,4 +1,5 @@
 // Libraries
+import { describe, test, expect, Mock } from 'vitest'
 import { Socket } from 'net'
 
 // Tested Module
@@ -24,7 +25,7 @@ describe('response - Defaults for "http.ServerResponse" (accepts no arguments an
 
     expect(res.assignSocket).toBeDefined()
     expect(typeof res.assignSocket).toBe('function')
-    expect((res.assignSocket as jest.Mock).getMockName()).toBe('assignSocket mock default')
+    expect((res.assignSocket as Mock).getMockName()).toBe('assignSocket mock default')
   })
 
   test('res.assignSocket is not chainable', () => {
@@ -40,7 +41,7 @@ describe('response - Defaults for "http.ServerResponse" (accepts no arguments an
 
     expect(res.detachSocket).toBeDefined()
     expect(typeof res.detachSocket).toBe('function')
-    expect((res.detachSocket as jest.Mock).getMockName()).toBe('detachSocket mock default')
+    expect((res.detachSocket as Mock).getMockName()).toBe('detachSocket mock default')
   })
 
   test('res.detachSocket is not chainable', () => {
@@ -56,7 +57,7 @@ describe('response - Defaults for "http.ServerResponse" (accepts no arguments an
 
     expect(res.writeContinue).toBeDefined()
     expect(typeof res.writeContinue).toBe('function')
-    expect((res.writeContinue as jest.Mock).getMockName()).toBe('writeContinue mock default')
+    expect((res.writeContinue as Mock).getMockName()).toBe('writeContinue mock default')
   })
 
   test('res.writeContinue is not chainable', () => {
@@ -71,7 +72,7 @@ describe('response - Defaults for "http.ServerResponse" (accepts no arguments an
 
     expect(res.writeHead).toBeDefined()
     expect(typeof res.writeHead).toBe('function')
-    expect((res.writeHead as jest.Mock).getMockName()).toBe('writeHead mock default')
+    expect((res.writeHead as Mock).getMockName()).toBe('writeHead mock default')
   })
 
   test('res.writeHead is chainable', () => {
@@ -86,7 +87,7 @@ describe('response - Defaults for "http.ServerResponse" (accepts no arguments an
 
     expect(res.writeProcessing).toBeDefined()
     expect(typeof res.writeProcessing).toBe('function')
-    expect((res.writeProcessing as jest.Mock).getMockName()).toBe('writeProcessing mock default')
+    expect((res.writeProcessing as Mock).getMockName()).toBe('writeProcessing mock default')
   })
 
   test('res.writeProcessing is not chainable', () => {

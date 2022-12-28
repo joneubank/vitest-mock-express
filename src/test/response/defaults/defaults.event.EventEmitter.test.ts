@@ -1,4 +1,5 @@
 // Tested Module
+import { describe, test, expect, Mock, vi } from 'vitest'
 import getMockRes from '../../../response/response'
 
 describe('response - Defaults for "event.EventEmitter" (accepts no arguments and return default values)', () => {
@@ -7,14 +8,14 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.addListener).toBeDefined()
     expect(typeof res.addListener).toBe('function')
-    expect((res.addListener as jest.Mock).getMockName()).toBe('addListener mock default')
+    expect((res.addListener as Mock).getMockName()).toBe('addListener mock default')
   })
 
   test('res.addListener is chainable', () => {
     const { res } = getMockRes()
 
     // it returns itself (is chainable)
-    expect(res.addListener('test', jest.fn())).toBe(res)
+    expect(res.addListener('test', vi.fn())).toBe(res)
   })
 
   test('res.on is a mocked function', () => {
@@ -22,14 +23,14 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.on).toBeDefined()
     expect(typeof res.on).toBe('function')
-    expect((res.on as jest.Mock).getMockName()).toBe('on mock default')
+    expect((res.on as Mock).getMockName()).toBe('on mock default')
   })
 
   test('res.on is chainable', () => {
     const { res } = getMockRes()
 
     // it returns itself (is chainable)
-    expect(res.on('test', jest.fn())).toBe(res)
+    expect(res.on('test', vi.fn())).toBe(res)
   })
 
   test('res.once is a mocked function', () => {
@@ -37,14 +38,14 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.once).toBeDefined()
     expect(typeof res.once).toBe('function')
-    expect((res.once as jest.Mock).getMockName()).toBe('once mock default')
+    expect((res.once as Mock).getMockName()).toBe('once mock default')
   })
 
   test('res.once is chainable', () => {
     const { res } = getMockRes()
 
     // it returns itself (is chainable)
-    expect(res.once('test', jest.fn())).toBe(res)
+    expect(res.once('test', vi.fn())).toBe(res)
   })
 
   test('res.removeListener is a mocked function', () => {
@@ -52,14 +53,14 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.removeListener).toBeDefined()
     expect(typeof res.removeListener).toBe('function')
-    expect((res.removeListener as jest.Mock).getMockName()).toBe('removeListener mock default')
+    expect((res.removeListener as Mock).getMockName()).toBe('removeListener mock default')
   })
 
   test('res.removeListener is chainable', () => {
     const { res } = getMockRes()
 
     // it returns itself (is chainable)
-    expect(res.removeListener('test', jest.fn())).toBe(res)
+    expect(res.removeListener('test', vi.fn())).toBe(res)
   })
 
   test('res.off is a mocked function', () => {
@@ -67,14 +68,14 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.off).toBeDefined()
     expect(typeof res.off).toBe('function')
-    expect((res.off as jest.Mock).getMockName()).toBe('off mock default')
+    expect((res.off as Mock).getMockName()).toBe('off mock default')
   })
 
   test('res.off is chainable', () => {
     const { res } = getMockRes()
 
     // it returns itself (is chainable)
-    expect(res.off('test', jest.fn())).toBe(res)
+    expect(res.off('test', vi.fn())).toBe(res)
   })
 
   test('res.removeAllListeners is a mocked function', () => {
@@ -82,7 +83,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.removeAllListeners).toBeDefined()
     expect(typeof res.removeAllListeners).toBe('function')
-    expect((res.removeAllListeners as jest.Mock).getMockName()).toBe('removeAllListeners mock default')
+    expect((res.removeAllListeners as Mock).getMockName()).toBe('removeAllListeners mock default')
   })
 
   test('res.removeAllListeners is chainable', () => {
@@ -97,7 +98,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.setMaxListeners).toBeDefined()
     expect(typeof res.setMaxListeners).toBe('function')
-    expect((res.setMaxListeners as jest.Mock).getMockName()).toBe('setMaxListeners mock default')
+    expect((res.setMaxListeners as Mock).getMockName()).toBe('setMaxListeners mock default')
   })
 
   test('res.setMaxListeners is chainable', () => {
@@ -112,7 +113,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.getMaxListeners).toBeDefined()
     expect(typeof res.getMaxListeners).toBe('function')
-    expect((res.getMaxListeners as jest.Mock).getMockName()).toBe('getMaxListeners mock default')
+    expect((res.getMaxListeners as Mock).getMockName()).toBe('getMaxListeners mock default')
   })
 
   test('res.getMaxListeners is not chainable', () => {
@@ -127,7 +128,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.listeners).toBeDefined()
     expect(typeof res.listeners).toBe('function')
-    expect((res.listeners as jest.Mock).getMockName()).toBe('listeners mock default')
+    expect((res.listeners as Mock).getMockName()).toBe('listeners mock default')
   })
 
   test('res.listeners is not chainable', () => {
@@ -142,7 +143,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.rawListeners).toBeDefined()
     expect(typeof res.rawListeners).toBe('function')
-    expect((res.rawListeners as jest.Mock).getMockName()).toBe('rawListeners mock default')
+    expect((res.rawListeners as Mock).getMockName()).toBe('rawListeners mock default')
   })
 
   test('res.rawListeners is not chainable', () => {
@@ -157,7 +158,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.emit).toBeDefined()
     expect(typeof res.emit).toBe('function')
-    expect((res.emit as jest.Mock).getMockName()).toBe('emit mock default')
+    expect((res.emit as Mock).getMockName()).toBe('emit mock default')
   })
 
   test('res.emit is not chainable', () => {
@@ -172,7 +173,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.listenerCount).toBeDefined()
     expect(typeof res.listenerCount).toBe('function')
-    expect((res.listenerCount as jest.Mock).getMockName()).toBe('listenerCount mock default')
+    expect((res.listenerCount as Mock).getMockName()).toBe('listenerCount mock default')
   })
 
   test('res.listenerCount is not chainable', () => {
@@ -187,14 +188,14 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.prependListener).toBeDefined()
     expect(typeof res.prependListener).toBe('function')
-    expect((res.prependListener as jest.Mock).getMockName()).toBe('prependListener mock default')
+    expect((res.prependListener as Mock).getMockName()).toBe('prependListener mock default')
   })
 
   test('res.prependListener is chainable', () => {
     const { res } = getMockRes()
 
     // it returns itself (is chainable)
-    expect(res.prependListener('test', jest.fn())).toBe(res)
+    expect(res.prependListener('test', vi.fn())).toBe(res)
   })
 
   test('res.prependOnceListener is a mocked function', () => {
@@ -202,14 +203,14 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.prependOnceListener).toBeDefined()
     expect(typeof res.prependOnceListener).toBe('function')
-    expect((res.prependOnceListener as jest.Mock).getMockName()).toBe('prependOnceListener mock default')
+    expect((res.prependOnceListener as Mock).getMockName()).toBe('prependOnceListener mock default')
   })
 
   test('res.prependOnceListener is chainable', () => {
     const { res } = getMockRes()
 
     // it returns itself (is chainable)
-    expect(res.prependOnceListener('test', jest.fn())).toBe(res)
+    expect(res.prependOnceListener('test', vi.fn())).toBe(res)
   })
 
   test('res.eventNames is a mocked function', () => {
@@ -217,7 +218,7 @@ describe('response - Defaults for "event.EventEmitter" (accepts no arguments and
 
     expect(res.eventNames).toBeDefined()
     expect(typeof res.eventNames).toBe('function')
-    expect((res.eventNames as jest.Mock).getMockName()).toBe('eventNames mock default')
+    expect((res.eventNames as Mock).getMockName()).toBe('eventNames mock default')
   })
 
   test('res.eventNames is not chainable', () => {

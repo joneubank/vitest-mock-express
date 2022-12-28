@@ -5,6 +5,7 @@ import type { Request } from 'express-serve-static-core'
 
 // Local Types
 import type { EventEventEmitter } from '../index'
+import { Mock } from 'vitest'
 
 interface StreamReadable extends EventEventEmitter {
   readable?: Readable['readable']
@@ -12,25 +13,25 @@ interface StreamReadable extends EventEventEmitter {
   readableLength?: Readable['readableLength']
   readableObjectMode?: Readable['readableObjectMode']
   destroyed?: Readable['destroyed']
-  _read?: jest.Mock
-  read?: jest.Mock
-  setEncoding?: jest.Mock
-  pause?: jest.Mock
-  resume?: jest.Mock
-  isPaused?: jest.Mock
-  unpipe?: jest.Mock
-  unshift?: jest.Mock
-  wrap?: jest.Mock
-  push?: jest.Mock
-  _destroy?: jest.Mock
-  addListener?: jest.Mock
-  emit?: jest.Mock
-  on?: jest.Mock
-  once?: jest.Mock
-  prependListener?: jest.Mock
-  prependOnceListener?: jest.Mock
-  removeListener?: jest.Mock
-  destroy?: jest.Mock
+  _read?: Mock
+  read?: Mock
+  setEncoding?: Mock
+  pause?: Mock
+  resume?: Mock
+  isPaused?: Mock
+  unpipe?: Mock
+  unshift?: Mock
+  wrap?: Mock
+  push?: Mock
+  _destroy?: Mock
+  addListener?: Mock
+  emit?: Mock
+  on?: Mock
+  once?: Mock
+  prependListener?: Mock
+  prependOnceListener?: Mock
+  removeListener?: Mock
+  destroy?: Mock
 }
 
 interface HttpIncomingMessage extends StreamReadable {
@@ -45,10 +46,10 @@ interface HttpIncomingMessage extends StreamReadable {
   rawHeaders?: IncomingMessage['rawHeaders']
   trailers?: IncomingMessage['trailers']
   rawTrailers?: IncomingMessage['rawTrailers']
-  setTimeout?: jest.Mock
+  setTimeout?: Mock
   statusCode?: IncomingMessage['statusCode']
   statusMessage?: IncomingMessage['statusMessage']
-  destroy?: jest.Mock
+  destroy?: Mock
 }
 
 export interface MockRequest extends HttpIncomingMessage {
@@ -74,18 +75,18 @@ export interface MockRequest extends HttpIncomingMessage {
   url?: Request['url']
   baseUrl?: Request['baseUrl']
   accepted?: Request['accepted']
-  get?: jest.Mock
-  header?: jest.Mock
-  accepts?: jest.Mock
-  acceptsCharsets?: jest.Mock
-  acceptsEncodings?: jest.Mock
-  acceptsLanguages?: jest.Mock
-  range?: jest.Mock
-  param?: jest.Mock
-  is?: jest.Mock
+  get?: Mock
+  header?: Mock
+  accepts?: Mock
+  acceptsCharsets?: Mock
+  acceptsEncodings?: Mock
+  acceptsLanguages?: Mock
+  range?: Mock
+  param?: Mock
+  is?: Mock
   app?: Partial<Request['app']>
   res?: Partial<Request['res']>
-  next?: jest.Mock
+  next?: Mock
 
   // allow custom properties to be provided
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

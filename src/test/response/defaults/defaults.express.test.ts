@@ -1,4 +1,5 @@
 // Tested Module
+import { describe, test, expect, Mock } from 'vitest'
 import getMockRes from '../../../response/response'
 
 describe('response - Defaults from "express.Express" (accepts no arguments and return default values)', () => {
@@ -7,7 +8,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.status).toBeDefined()
     expect(typeof res.status).toBe('function')
-    expect((res.status as jest.Mock).getMockName()).toBe('status mock default')
+    expect((res.status as Mock).getMockName()).toBe('status mock default')
   })
 
   test('res.status is chainable', () => {
@@ -22,7 +23,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.sendStatus).toBeDefined()
     expect(typeof res.sendStatus).toBe('function')
-    expect((res.sendStatus as jest.Mock).getMockName()).toBe('sendStatus mock default')
+    expect((res.sendStatus as Mock).getMockName()).toBe('sendStatus mock default')
   })
 
   test('res.sendStatus is chainable', () => {
@@ -37,7 +38,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.links).toBeDefined()
     expect(typeof res.links).toBe('function')
-    expect((res.links as jest.Mock).getMockName()).toBe('links mock default')
+    expect((res.links as Mock).getMockName()).toBe('links mock default')
   })
 
   test('res.links is chainable', () => {
@@ -52,7 +53,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.send).toBeDefined()
     expect(typeof res.send).toBe('function')
-    expect((res.send as jest.Mock).getMockName()).toBe('send mock default')
+    expect((res.send as Mock).getMockName()).toBe('send mock default')
   })
 
   test('res.send is chainable', () => {
@@ -67,7 +68,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.json).toBeDefined()
     expect(typeof res.json).toBe('function')
-    expect((res.json as jest.Mock).getMockName()).toBe('json mock default')
+    expect((res.json as Mock).getMockName()).toBe('json mock default')
   })
 
   test('res.json is chainable', () => {
@@ -82,7 +83,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.jsonp).toBeDefined()
     expect(typeof res.jsonp).toBe('function')
-    expect((res.jsonp as jest.Mock).getMockName()).toBe('jsonp mock default')
+    expect((res.jsonp as Mock).getMockName()).toBe('jsonp mock default')
   })
 
   test('res.jsonp is chainable', () => {
@@ -97,7 +98,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.sendFile).toBeDefined()
     expect(typeof res.sendFile).toBe('function')
-    expect((res.sendFile as jest.Mock).getMockName()).toBe('sendFile mock default')
+    expect((res.sendFile as Mock).getMockName()).toBe('sendFile mock default')
   })
 
   test('res.sendFile function is not chainable', () => {
@@ -112,7 +113,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.sendfile).toBeDefined()
     expect(typeof res.sendfile).toBe('function')
-    expect((res.sendfile as jest.Mock).getMockName()).toBe('sendfile mock default')
+    expect((res.sendfile as Mock).getMockName()).toBe('sendfile mock default')
   })
 
   test('res.sendfile function is not chainable', () => {
@@ -127,7 +128,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.download).toBeDefined()
     expect(typeof res.download).toBe('function')
-    expect((res.download as jest.Mock).getMockName()).toBe('download mock default')
+    expect((res.download as Mock).getMockName()).toBe('download mock default')
   })
 
   test('res.download function is not chainable', () => {
@@ -142,7 +143,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.contentType).toBeDefined()
     expect(typeof res.contentType).toBe('function')
-    expect((res.contentType as jest.Mock).getMockName()).toBe('contentType mock default')
+    expect((res.contentType as Mock).getMockName()).toBe('contentType mock default')
   })
 
   test('res.contentType is chainable', () => {
@@ -157,7 +158,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.type).toBeDefined()
     expect(typeof res.type).toBe('function')
-    expect((res.type as jest.Mock).getMockName()).toBe('type mock default')
+    expect((res.type as Mock).getMockName()).toBe('type mock default')
   })
 
   test('res.type is chainable', () => {
@@ -172,7 +173,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.format).toBeDefined()
     expect(typeof res.format).toBe('function')
-    expect((res.format as jest.Mock).getMockName()).toBe('format mock default')
+    expect((res.format as Mock).getMockName()).toBe('format mock default')
   })
 
   test('res.format is chainable', () => {
@@ -186,7 +187,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.attachment).toBeDefined()
     expect(typeof res.attachment).toBe('function')
-    expect((res.attachment as jest.Mock).getMockName()).toBe('attachment mock default')
+    expect((res.attachment as Mock).getMockName()).toBe('attachment mock default')
   })
 
   test('res.attachment is chainable', () => {
@@ -201,7 +202,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.set).toBeDefined()
     expect(typeof res.set).toBe('function')
-    expect((res.set as jest.Mock).getMockName()).toBe('set mock default')
+    expect((res.set as Mock).getMockName()).toBe('set mock default')
   })
 
   test('res.set is chainable', () => {
@@ -216,7 +217,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.header).toBeDefined()
     expect(typeof res.header).toBe('function')
-    expect((res.header as jest.Mock).getMockName()).toBe('header mock default')
+    expect((res.header as Mock).getMockName()).toBe('header mock default')
   })
 
   test('res.header is chainable', () => {
@@ -238,7 +239,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.get).toBeDefined()
     expect(typeof res.get).toBe('function')
-    expect((res.get as jest.Mock).getMockName()).toBe('get mock default')
+    expect((res.get as Mock).getMockName()).toBe('get mock default')
   })
 
   test('res.get is not chainable', () => {
@@ -253,7 +254,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.clearCookie).toBeDefined()
     expect(typeof res.clearCookie).toBe('function')
-    expect((res.clearCookie as jest.Mock).getMockName()).toBe('clearCookie mock default')
+    expect((res.clearCookie as Mock).getMockName()).toBe('clearCookie mock default')
   })
 
   test('res.clearCookie is chainable', () => {
@@ -268,7 +269,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.cookie).toBeDefined()
     expect(typeof res.cookie).toBe('function')
-    expect((res.cookie as jest.Mock).getMockName()).toBe('cookie mock default')
+    expect((res.cookie as Mock).getMockName()).toBe('cookie mock default')
   })
 
   test('res.cookie is chainable', () => {
@@ -283,7 +284,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.location).toBeDefined()
     expect(typeof res.location).toBe('function')
-    expect((res.location as jest.Mock).getMockName()).toBe('location mock default')
+    expect((res.location as Mock).getMockName()).toBe('location mock default')
   })
 
   test('res.location is chainable', () => {
@@ -298,7 +299,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.redirect).toBeDefined()
     expect(typeof res.redirect).toBe('function')
-    expect((res.redirect as jest.Mock).getMockName()).toBe('redirect mock default')
+    expect((res.redirect as Mock).getMockName()).toBe('redirect mock default')
   })
 
   test('res.redirect is not chainable', () => {
@@ -313,7 +314,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.render).toBeDefined()
     expect(typeof res.render).toBe('function')
-    expect((res.render as jest.Mock).getMockName()).toBe('render mock default')
+    expect((res.render as Mock).getMockName()).toBe('render mock default')
   })
 
   test('res.render is not chainable', () => {
@@ -343,7 +344,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.vary).toBeDefined()
     expect(typeof res.vary).toBe('function')
-    expect((res.vary as jest.Mock).getMockName()).toBe('vary mock default')
+    expect((res.vary as Mock).getMockName()).toBe('vary mock default')
   })
 
   test('res.vary is chainable', () => {
@@ -366,7 +367,7 @@ describe('response - Defaults from "express.Express" (accepts no arguments and r
 
     expect(res.append).toBeDefined()
     expect(typeof res.append).toBe('function')
-    expect((res.append as jest.Mock).getMockName()).toBe('append mock default')
+    expect((res.append as Mock).getMockName()).toBe('append mock default')
   })
 
   test('res.append is chainable', () => {

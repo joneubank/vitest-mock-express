@@ -1,4 +1,5 @@
 // Tested Module
+import { describe, test, expect, Mock } from 'vitest'
 import getMockRes from '../../../response/response'
 
 describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments and return default values)', () => {
@@ -57,7 +58,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.connection).toBeDefined()
     expect(res.connection).toBeInstanceOf(Object)
-    expect(Object.keys(res.connection).length).toBe(0)
+    expect(Object.keys(res.connection || { key: 1 }).length).toBe(0)
   })
 
   test('res.socket is am empty object', () => {
@@ -65,7 +66,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.socket).toBeDefined()
     expect(res.socket).toBeInstanceOf(Object)
-    expect(Object.keys(res.socket).length).toBe(0)
+    expect(Object.keys(res.socket || { key: 1 }).length).toBe(0)
   })
 
   test('res.setTimeout is a mocked function', () => {
@@ -73,7 +74,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.setTimeout).toBeDefined()
     expect(typeof res.setTimeout).toBe('function')
-    expect((res.setTimeout as jest.Mock).getMockName()).toBe('setTimeout mock default')
+    expect((res.setTimeout as Mock).getMockName()).toBe('setTimeout mock default')
   })
 
   test('res.setTimeout is chainable', () => {
@@ -88,7 +89,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.setHeader).toBeDefined()
     expect(typeof res.setHeader).toBe('function')
-    expect((res.setHeader as jest.Mock).getMockName()).toBe('setHeader mock default')
+    expect((res.setHeader as Mock).getMockName()).toBe('setHeader mock default')
   })
 
   test('res.setHeader is not chainable', () => {
@@ -103,7 +104,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.getHeader).toBeDefined()
     expect(typeof res.getHeader).toBe('function')
-    expect((res.getHeader as jest.Mock).getMockName()).toBe('getHeader mock default')
+    expect((res.getHeader as Mock).getMockName()).toBe('getHeader mock default')
   })
 
   test('res.getHeader is not chainable', () => {
@@ -118,7 +119,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.getHeaders).toBeDefined()
     expect(typeof res.getHeaders).toBe('function')
-    expect((res.getHeaders as jest.Mock).getMockName()).toBe('getHeaders mock default')
+    expect((res.getHeaders as Mock).getMockName()).toBe('getHeaders mock default')
   })
 
   test('res.getHeaders is not chainable', () => {
@@ -133,7 +134,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.getHeaderNames).toBeDefined()
     expect(typeof res.getHeaderNames).toBe('function')
-    expect((res.getHeaderNames as jest.Mock).getMockName()).toBe('getHeaderNames mock default')
+    expect((res.getHeaderNames as Mock).getMockName()).toBe('getHeaderNames mock default')
   })
 
   test('res.getHeaderNames is not chainable', () => {
@@ -148,7 +149,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.hasHeader).toBeDefined()
     expect(typeof res.hasHeader).toBe('function')
-    expect((res.hasHeader as jest.Mock).getMockName()).toBe('hasHeader mock default')
+    expect((res.hasHeader as Mock).getMockName()).toBe('hasHeader mock default')
   })
 
   test('res.hasHeader is not chainable', () => {
@@ -163,7 +164,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.removeHeader).toBeDefined()
     expect(typeof res.removeHeader).toBe('function')
-    expect((res.removeHeader as jest.Mock).getMockName()).toBe('removeHeader mock default')
+    expect((res.removeHeader as Mock).getMockName()).toBe('removeHeader mock default')
   })
 
   test('res.removeHeader is not chainable', () => {
@@ -178,7 +179,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.addTrailers).toBeDefined()
     expect(typeof res.addTrailers).toBe('function')
-    expect((res.addTrailers as jest.Mock).getMockName()).toBe('addTrailers mock default')
+    expect((res.addTrailers as Mock).getMockName()).toBe('addTrailers mock default')
   })
 
   test('res.addTrailers is not chainable', () => {
@@ -193,7 +194,7 @@ describe('response - Defaults for "http.OutgoingMessage" (accepts no arguments a
 
     expect(res.flushHeaders).toBeDefined()
     expect(typeof res.flushHeaders).toBe('function')
-    expect((res.flushHeaders as jest.Mock).getMockName()).toBe('flushHeaders mock default')
+    expect((res.flushHeaders as Mock).getMockName()).toBe('flushHeaders mock default')
   })
 
   test('res.flushHeaders is not chainable', () => {

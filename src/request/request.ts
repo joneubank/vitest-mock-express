@@ -1,5 +1,6 @@
 // Types
 import type { Request } from 'express'
+import { vi } from 'vitest'
 
 // Local Types
 import type { MockRequest } from './index'
@@ -32,18 +33,18 @@ export const getMockReq = <T extends Request>(values: MockRequest = {}): T => {
     url = '',
     baseUrl = '',
     accepted = [],
-    get = jest.fn().mockName('get mock default'),
-    header = jest.fn().mockName('header mock default'),
-    accepts = jest.fn().mockName('accepts mock default'),
-    acceptsCharsets = jest.fn().mockName('acceptsCharsets mock default'),
-    acceptsEncodings = jest.fn().mockName('acceptsEncodings mock default'),
-    acceptsLanguages = jest.fn().mockName('acceptsLanguages mock default'),
-    range = jest.fn().mockName('range mock default'),
-    param = jest.fn().mockName('param mock default'),
-    is = jest.fn().mockName('is mock default'),
+    get = vi.fn().mockName('get mock default'),
+    header = vi.fn().mockName('header mock default'),
+    accepts = vi.fn().mockName('accepts mock default'),
+    acceptsCharsets = vi.fn().mockName('acceptsCharsets mock default'),
+    acceptsEncodings = vi.fn().mockName('acceptsEncodings mock default'),
+    acceptsLanguages = vi.fn().mockName('acceptsLanguages mock default'),
+    range = vi.fn().mockName('range mock default'),
+    param = vi.fn().mockName('param mock default'),
+    is = vi.fn().mockName('is mock default'),
     app = {},
-    res = jest.fn().mockName('res mock default'),
-    next = jest.fn().mockName('next mock default'),
+    res = vi.fn().mockName('res mock default'),
+    next = vi.fn().mockName('next mock default'),
 
     /* http.IncomingMessage */
     aborted = false,
@@ -57,10 +58,10 @@ export const getMockReq = <T extends Request>(values: MockRequest = {}): T => {
     rawHeaders = [],
     trailers = {},
     rawTrailers = [],
-    setTimeout = jest.fn().mockName('setTimeout mock default'),
+    setTimeout = vi.fn().mockName('setTimeout mock default'),
     statusCode = 0,
     statusMessage = '',
-    destroy = jest.fn().mockName('destroy mock default'),
+    destroy = vi.fn().mockName('destroy mock default'),
 
     /* stream.Readable */
     readable = false,
@@ -68,24 +69,24 @@ export const getMockReq = <T extends Request>(values: MockRequest = {}): T => {
     readableLength = 0,
     readableObjectMode = false,
     destroyed = false,
-    _read = jest.fn().mockName('_read mock default'),
-    read = jest.fn().mockName('read mock default'),
-    setEncoding = jest.fn().mockName('setEncoding mock default'),
-    pause = jest.fn().mockName('pause mock default'),
-    resume = jest.fn().mockName('resume mock default'),
-    isPaused = jest.fn().mockName('isPaused mock default'),
-    unpipe = jest.fn().mockName('unpipe mock default'),
-    unshift = jest.fn().mockName('unshift mock default'),
-    wrap = jest.fn().mockName('wrap mock default'),
-    push = jest.fn().mockName('push mock default'),
-    _destroy = jest.fn().mockName('_destroy mock default'),
-    addListener = jest.fn().mockName('addListener mock default'),
-    emit = jest.fn().mockName('emit mock default'),
-    on = jest.fn().mockName('on mock default'),
-    once = jest.fn().mockName('once mock default'),
-    prependListener = jest.fn().mockName('prependListener mock default'),
-    prependOnceListener = jest.fn().mockName('prependOnceListener mock default'),
-    removeListener = jest.fn().mockName('removeListener mock default'),
+    _read = vi.fn().mockName('_read mock default'),
+    read = vi.fn().mockName('read mock default'),
+    setEncoding = vi.fn().mockName('setEncoding mock default'),
+    pause = vi.fn().mockName('pause mock default'),
+    resume = vi.fn().mockName('resume mock default'),
+    isPaused = vi.fn().mockName('isPaused mock default'),
+    unpipe = vi.fn().mockName('unpipe mock default'),
+    unshift = vi.fn().mockName('unshift mock default'),
+    wrap = vi.fn().mockName('wrap mock default'),
+    push = vi.fn().mockName('push mock default'),
+    _destroy = vi.fn().mockName('_destroy mock default'),
+    addListener = vi.fn().mockName('addListener mock default'),
+    emit = vi.fn().mockName('emit mock default'),
+    on = vi.fn().mockName('on mock default'),
+    once = vi.fn().mockName('once mock default'),
+    prependListener = vi.fn().mockName('prependListener mock default'),
+    prependOnceListener = vi.fn().mockName('prependOnceListener mock default'),
+    removeListener = vi.fn().mockName('removeListener mock default'),
     // destroy - is handled/overridden as part of http.IncomingMessage
 
     /* event.EventEmitter */
@@ -93,17 +94,17 @@ export const getMockReq = <T extends Request>(values: MockRequest = {}): T => {
     // on - is handled/overridden as part of stream.Readable
     // once - is handled/overridden as part of stream.Readable
     // removeListener - is handled/overridden as part of stream.Readable
-    off = jest.fn().mockName('off mock default'),
-    removeAllListeners = jest.fn().mockName('removeAllListeners mock default'),
-    setMaxListeners = jest.fn().mockName('setMaxListeners mock default'),
-    getMaxListeners = jest.fn().mockName('getMaxListeners mock default'),
-    listeners = jest.fn().mockName('listeners mock default'),
-    rawListeners = jest.fn().mockName('rawListeners mock default'),
+    off = vi.fn().mockName('off mock default'),
+    removeAllListeners = vi.fn().mockName('removeAllListeners mock default'),
+    setMaxListeners = vi.fn().mockName('setMaxListeners mock default'),
+    getMaxListeners = vi.fn().mockName('getMaxListeners mock default'),
+    listeners = vi.fn().mockName('listeners mock default'),
+    rawListeners = vi.fn().mockName('rawListeners mock default'),
     // emit - is handled/overridden as part of stream.Readable
-    listenerCount = jest.fn().mockName('listenerCount mock default'),
+    listenerCount = vi.fn().mockName('listenerCount mock default'),
     // prependListener - is handled/overridden as part of stream.Readable
     // prependOnceListener - is handled/overridden as part of stream.Readable
-    eventNames = jest.fn().mockName('eventNames mock default'),
+    eventNames = vi.fn().mockName('eventNames mock default'),
 
     // custom values
     ...extraProvidedValues

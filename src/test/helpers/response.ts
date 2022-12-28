@@ -1,6 +1,7 @@
 // Types
 import type { Socket } from 'net'
 import type { Response } from 'express'
+import { vi } from 'vitest'
 
 export function callAllFunctions(res: Response) {
   /* express.Response */
@@ -47,30 +48,30 @@ export function callAllFunctions(res: Response) {
   res.flushHeaders()
 
   /* stream.Writable */
-  res._write({}, 'test', jest.fn())
-  res._writev && res._writev([], jest.fn())
-  res._destroy(null, jest.fn())
-  res._final(jest.fn())
-  res.write({}, jest.fn())
-  res.setDefaultEncoding('test')
+  res._write({}, 'utf-8', vi.fn())
+  res._writev && res._writev([], vi.fn())
+  res._destroy(null, vi.fn())
+  res._final(vi.fn())
+  res.write({}, vi.fn())
+  res.setDefaultEncoding('utf-8')
   res.end()
   res.cork()
   res.uncork()
   res.destroy()
-  res.addListener('test', jest.fn())
+  res.addListener('test', vi.fn())
   res.emit('test')
-  res.on('test', jest.fn())
-  res.once('test', jest.fn())
-  res.prependListener('test', jest.fn())
-  res.prependOnceListener('test', jest.fn())
-  res.removeListener('test', jest.fn())
+  res.on('test', vi.fn())
+  res.once('test', vi.fn())
+  res.prependListener('test', vi.fn())
+  res.prependOnceListener('test', vi.fn())
+  res.removeListener('test', vi.fn())
 
   /* event.EventEmitter */
   // addListener - is handled/overridden as part of stream.Writable
   // on - is handled/overridden as part of stream.Writable
   // once - is handled/overridden as part of stream.Writable
   // removeListener - is handled/overridden as part of stream.Writable
-  res.off('test', jest.fn())
+  res.off('test', vi.fn())
   res.removeAllListeners()
   res.setMaxListeners(2)
   res.getMaxListeners()

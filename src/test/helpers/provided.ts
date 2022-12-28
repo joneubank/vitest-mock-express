@@ -1,6 +1,7 @@
 // Types
 import type { Response } from 'express'
 import type { MediaType, Request } from 'express-serve-static-core'
+import { vi } from 'vitest'
 
 export const providedNumber = 123
 
@@ -10,7 +11,7 @@ export const providedString = 'Provided String'
 
 export const providedStringArray = ['One', 'Two', 'Three', 'Four']
 
-export const providedFunction = jest.fn().mockName('Provided Mock Function')
+export const providedFunction = vi.fn().mockName('Provided Mock Function')
 
 export const providedObject = {
   one: {

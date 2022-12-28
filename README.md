@@ -1,6 +1,8 @@
-# @jest-mock/express
+# @vitest-mock/express
 
-A lightweight Jest mock for unit testing Express
+A lightweight Vitest mock for unit testing Express
+
+THIS IS A FORK OF [@jest-mock/express](https://github.com/bikk-uk/jest-mock-express) ALL CREDITS GOES TO THE ORIGINAL AUTHOR
 
 [![Build and Test](https://github.com/bikk-uk/jest-mock-express/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/bikk-uk/jest-mock-express/actions/workflows/build-test.yml)
 [![Coverage Status](https://coveralls.io/repos/github/bikk-uk/jest-mock-express/badge.svg?branch=master)](https://coveralls.io/github/bikk-uk/jest-mock-express?branch=master)

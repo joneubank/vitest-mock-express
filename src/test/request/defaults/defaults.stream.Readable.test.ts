@@ -1,4 +1,5 @@
 // Tested Module
+import { describe, test, expect, Mock } from 'vitest'
 import getMockReq from '../../../request/request'
 
 describe('request - Defaults from "stream.Readable" (accepts no arguments and return default values)', () => {
@@ -50,7 +51,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req._read).toBeDefined()
     expect(typeof req._read).toBe('function')
-    expect((req._read as jest.Mock).getMockName()).toBe('_read mock default')
+    expect((req._read as Mock).getMockName()).toBe('_read mock default')
   })
 
   test('req.read is a mocked function', () => {
@@ -58,7 +59,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.read).toBeDefined()
     expect(typeof req.read).toBe('function')
-    expect((req.read as jest.Mock).getMockName()).toBe('read mock default')
+    expect((req.read as Mock).getMockName()).toBe('read mock default')
   })
 
   test('req.setEncoding is a mocked function', () => {
@@ -66,7 +67,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.setEncoding).toBeDefined()
     expect(typeof req.setEncoding).toBe('function')
-    expect((req.setEncoding as jest.Mock).getMockName()).toBe('setEncoding mock default')
+    expect((req.setEncoding as Mock).getMockName()).toBe('setEncoding mock default')
   })
 
   test('req.pause is a mocked function', () => {
@@ -74,7 +75,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.pause).toBeDefined()
     expect(typeof req.pause).toBe('function')
-    expect((req.pause as jest.Mock).getMockName()).toBe('pause mock default')
+    expect((req.pause as Mock).getMockName()).toBe('pause mock default')
   })
 
   test('req.resume is a mocked function', () => {
@@ -82,7 +83,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.resume).toBeDefined()
     expect(typeof req.resume).toBe('function')
-    expect((req.resume as jest.Mock).getMockName()).toBe('resume mock default')
+    expect((req.resume as Mock).getMockName()).toBe('resume mock default')
   })
 
   test('req.isPaused is a mocked function', () => {
@@ -90,7 +91,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.isPaused).toBeDefined()
     expect(typeof req.isPaused).toBe('function')
-    expect((req.isPaused as jest.Mock).getMockName()).toBe('isPaused mock default')
+    expect((req.isPaused as Mock).getMockName()).toBe('isPaused mock default')
   })
 
   test('req.unpipe is a mocked function', () => {
@@ -98,7 +99,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.unpipe).toBeDefined()
     expect(typeof req.unpipe).toBe('function')
-    expect((req.unpipe as jest.Mock).getMockName()).toBe('unpipe mock default')
+    expect((req.unpipe as Mock).getMockName()).toBe('unpipe mock default')
   })
 
   test('req.unshift is a mocked function', () => {
@@ -106,7 +107,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.unshift).toBeDefined()
     expect(typeof req.unshift).toBe('function')
-    expect((req.unshift as jest.Mock).getMockName()).toBe('unshift mock default')
+    expect((req.unshift as Mock).getMockName()).toBe('unshift mock default')
   })
 
   test('req.wrap is a mocked function', () => {
@@ -114,7 +115,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.wrap).toBeDefined()
     expect(typeof req.wrap).toBe('function')
-    expect((req.wrap as jest.Mock).getMockName()).toBe('wrap mock default')
+    expect((req.wrap as Mock).getMockName()).toBe('wrap mock default')
   })
 
   test('req.push is a mocked function', () => {
@@ -122,7 +123,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.push).toBeDefined()
     expect(typeof req.push).toBe('function')
-    expect((req.push as jest.Mock).getMockName()).toBe('push mock default')
+    expect((req.push as Mock).getMockName()).toBe('push mock default')
   })
 
   test('req._destroy is a mocked function', () => {
@@ -130,7 +131,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req._destroy).toBeDefined()
     expect(typeof req._destroy).toBe('function')
-    expect((req._destroy as jest.Mock).getMockName()).toBe('_destroy mock default')
+    expect((req._destroy as Mock).getMockName()).toBe('_destroy mock default')
   })
 
   test('req.addListener is a mocked function', () => {
@@ -138,7 +139,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.addListener).toBeDefined()
     expect(typeof req.addListener).toBe('function')
-    expect((req.addListener as jest.Mock).getMockName()).toBe('addListener mock default')
+    expect((req.addListener as Mock).getMockName()).toBe('addListener mock default')
   })
 
   test('req.emit is a mocked function', () => {
@@ -146,7 +147,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.emit).toBeDefined()
     expect(typeof req.emit).toBe('function')
-    expect((req.emit as jest.Mock).getMockName()).toBe('emit mock default')
+    expect((req.emit as Mock).getMockName()).toBe('emit mock default')
   })
 
   test('req.on is a mocked function', () => {
@@ -154,7 +155,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.on).toBeDefined()
     expect(typeof req.on).toBe('function')
-    expect((req.on as jest.Mock).getMockName()).toBe('on mock default')
+    expect((req.on as Mock).getMockName()).toBe('on mock default')
   })
 
   test('req.once is a mocked function', () => {
@@ -162,7 +163,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.once).toBeDefined()
     expect(typeof req.once).toBe('function')
-    expect((req.once as jest.Mock).getMockName()).toBe('once mock default')
+    expect((req.once as Mock).getMockName()).toBe('once mock default')
   })
 
   test('req.prependListener is a mocked function', () => {
@@ -170,7 +171,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.prependListener).toBeDefined()
     expect(typeof req.prependListener).toBe('function')
-    expect((req.prependListener as jest.Mock).getMockName()).toBe('prependListener mock default')
+    expect((req.prependListener as Mock).getMockName()).toBe('prependListener mock default')
   })
 
   test('req.prependOnceListener is a mocked function', () => {
@@ -178,7 +179,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.prependOnceListener).toBeDefined()
     expect(typeof req.prependOnceListener).toBe('function')
-    expect((req.prependOnceListener as jest.Mock).getMockName()).toBe('prependOnceListener mock default')
+    expect((req.prependOnceListener as Mock).getMockName()).toBe('prependOnceListener mock default')
   })
 
   test('req.removeListener is a mocked function', () => {
@@ -186,7 +187,7 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.removeListener).toBeDefined()
     expect(typeof req.removeListener).toBe('function')
-    expect((req.removeListener as jest.Mock).getMockName()).toBe('removeListener mock default')
+    expect((req.removeListener as Mock).getMockName()).toBe('removeListener mock default')
   })
 
   test('req.destroy is a mocked function', () => {
@@ -194,6 +195,6 @@ describe('request - Defaults from "stream.Readable" (accepts no arguments and re
 
     expect(req.destroy).toBeDefined()
     expect(typeof req.destroy).toBe('function')
-    expect((req.destroy as jest.Mock).getMockName()).toBe('destroy mock default')
+    expect((req.destroy as Mock).getMockName()).toBe('destroy mock default')
   })
 })

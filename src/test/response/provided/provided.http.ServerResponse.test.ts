@@ -1,4 +1,5 @@
 // Helpers
+import { describe, test, expect } from 'vitest'
 import { providedFunction, providedNumber, providedString } from '../../helpers/provided'
 
 // Tested Module

@@ -1,4 +1,5 @@
 // Tested Module
+import { describe, test, expect, Mock } from 'vitest'
 import getMockReq from '../../../request/request'
 
 describe('request - Defaults from "http.IncomingMessage" (accepts no arguments and return default values)', () => {
@@ -90,7 +91,7 @@ describe('request - Defaults from "http.IncomingMessage" (accepts no arguments a
 
     expect(req.setTimeout).toBeDefined()
     expect(typeof req.setTimeout).toBe('function')
-    expect((req.setTimeout as jest.Mock).getMockName()).toBe('setTimeout mock default')
+    expect((req.setTimeout as Mock).getMockName()).toBe('setTimeout mock default')
   })
 
   test('req.statusCode is a number', () => {
@@ -112,6 +113,6 @@ describe('request - Defaults from "http.IncomingMessage" (accepts no arguments a
 
     expect(req.destroy).toBeDefined()
     expect(typeof req.destroy).toBe('function')
-    expect((req.destroy as jest.Mock).getMockName()).toBe('destroy mock default')
+    expect((req.destroy as Mock).getMockName()).toBe('destroy mock default')
   })
 })
