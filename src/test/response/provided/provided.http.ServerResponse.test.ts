@@ -1,57 +1,57 @@
 // Helpers
-import { describe, test, expect } from 'vitest'
-import { providedFunction, providedNumber, providedString } from '../../helpers/provided'
+import { describe, test, expect } from 'vitest';
+import { providedFunction, providedNumber, providedString } from '../../helpers/provided.js';
 
 // Tested Module
-import getMockRes from '../../../response/response'
+import getMockRes from '../../../response/response.js';
 
 describe('response - Provided for "http.ServerResponse" (accepts arguments and returns expected values)', () => {
-  test('res.statusCode can be provided', () => {
-    const { res } = getMockRes({ statusCode: providedNumber })
+	test('res.statusCode can be provided', () => {
+		const { res } = getMockRes({ statusCode: providedNumber });
 
-    expect(res.statusCode).toBeDefined()
-    expect(res.statusCode).toBe(providedNumber)
-  })
+		expect(res.statusCode).toBeDefined();
+		expect(res.statusCode).toBe(providedNumber);
+	});
 
-  test('res.statusMessage can be provided', () => {
-    const { res } = getMockRes({ statusMessage: providedString })
+	test('res.statusMessage can be provided', () => {
+		const { res } = getMockRes({ statusMessage: providedString });
 
-    expect(res.statusMessage).toBeDefined()
-    expect(res.statusMessage).toBe(providedString)
-  })
+		expect(res.statusMessage).toBeDefined();
+		expect(res.statusMessage).toBe(providedString);
+	});
 
-  test('res.assignSocket can be provided', () => {
-    const { res } = getMockRes({ assignSocket: providedFunction })
+	test('res.assignSocket can be provided', () => {
+		const { res } = getMockRes({ assignSocket: providedFunction });
 
-    expect(res.assignSocket).toBeDefined()
-    expect(res.assignSocket).toBe(providedFunction)
-  })
+		expect(res.assignSocket).toBeDefined();
+		expect(res.assignSocket).toBe(providedFunction);
+	});
 
-  test('res.detachSocket can be provided', () => {
-    const { res } = getMockRes({ detachSocket: providedFunction })
+	test('res.detachSocket can be provided', () => {
+		const { res } = getMockRes({ detachSocket: providedFunction });
 
-    expect(res.detachSocket).toBeDefined()
-    expect(res.detachSocket).toBe(providedFunction)
-  })
+		expect(res.detachSocket).toBeDefined();
+		expect(res.detachSocket).toBe(providedFunction);
+	});
 
-  test('res.writeContinue can be provided', () => {
-    const { res } = getMockRes({ writeContinue: providedFunction })
+	test('res.writeContinue can be provided', () => {
+		const { res } = getMockRes({ writeContinue: providedFunction });
 
-    expect(res.writeContinue).toBeDefined()
-    expect(res.writeContinue).toBe(providedFunction)
-  })
+		expect(res.writeContinue).toBeDefined();
+		expect(res.writeContinue).toBe(providedFunction);
+	});
 
-  test('res.writeHead can be provided', () => {
-    const { res } = getMockRes({ writeHead: providedFunction })
+	test('res.writeHead can be provided', () => {
+		const { res } = getMockRes({ writeHead: providedFunction });
 
-    expect(res.writeHead).toBeDefined()
-    expect(res.writeHead).toBe(providedFunction)
-  })
+		expect(res.writeHead).toBeDefined();
+		expect(res.writeHead).toBe(providedFunction);
+	});
 
-  test('res.writeProcessing can be provided', () => {
-    const { res } = getMockRes({ writeProcessing: providedFunction })
+	test('res.writeProcessing can be provided', () => {
+		const { res } = getMockRes({ writeProcessing: providedFunction });
 
-    expect(res.writeProcessing).toBeDefined()
-    expect(res.writeProcessing).toBe(providedFunction)
-  })
-})
+		expect(res.writeProcessing).toBeDefined();
+		expect(res.writeProcessing).toBe(providedFunction);
+	});
+});
