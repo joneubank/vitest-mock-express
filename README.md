@@ -2,7 +2,7 @@
 
 A lightweight Vitest mock for unit testing Express
 
-THIS IS A FORK OF [@jest-mock/express](https://github.com/bikk-uk/jest-mock-express) ALL CREDITS GOES TO THE ORIGINAL AUTHOR
+> This is a fork of [vitest-mock-express](https://github.com/eagleera/vitest-mock-express) which is a conversion of [@jest-mock/express](https://github.com/bikk-uk/jest-mock-express) to work with vitest. Credit to the original authors and the MIT license has been maintained. This fork has been updated to ESM and dependencies have been upgraded.
 
 ## Getting Started
 
